@@ -1,0 +1,179 @@
+/* General styling */
+body {
+  margin: 0;
+  background-color: #cce8f4;
+  font-family: Gabriola, serif;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15%;
+  height: 100vh;
+  overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
+
+/* Left container */
+.container {
+  width: 300px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hbd h1,
+.hbd_anshu h1 {
+  font-size: 5.5rem;
+  white-space: nowrap;
+  color: #333;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.message-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 20%;
+}
+
+.message-links a {
+  padding: 6px 70px;
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #4d9dbf;
+  border-radius: 10px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.message-links a:hover {
+  background-color: #6eb2cf;
+}
+
+/* Right side reels */
+.image-reels {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+  padding: 0px 20px;
+}
+
+.image-reel {
+  width: 200px;
+  height: 1260px;
+  overflow: hidden;
+  border: 5px solid black;
+  position: relative;
+  background: white;
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.image-set {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.image-reel img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 0px solid black;
+}
+
+/* Animation keyframes */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.image-reel.upwards .scroll-content {
+  animation-name: scrollUp;
+  animation-duration: 12s;
+}
+
+.image-reel.downwards .scroll-content {
+  animation-name: scrollDown;
+  animation-duration: 12s;
+}
+
+/* Birthday message styling */
+.birthday-message {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  max-width: 900px;
+  line-height: 1.5;
+}
+
+/* Message wrapper - UPDATED FOR CENTERING */
+.mess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0 auto;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Override body styles for message pages */
+body:has(.mess) {
+  padding-left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Go back button */
+.go-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.go-back a {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #4d9dbf;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.go-back a:hover {
+  background-color: #6eb2cf;
+}
